@@ -4,6 +4,14 @@
     class="flex flex-col w-full xl:pr-10 relative z-40 px-5 xl:px-0 pt-32 pb-32 md:pt-40 md:pb-40"
     data-scroll="rules"
   >
+    <RoboBanner
+      @click="isInfoDialogOpen = true"
+      position-class="hidden sm:block right-[-1.5rem] md:right-6 xl:right-[15vw] mt-[-1.5rem] md:mt-[-2rem] xl:mt-2"
+      scale-class="scale-75 md:scale-100"
+      rotate-class="rotate-[-7deg]"
+      origin-class="origin-center"
+    />
+    <InfoDialog v-model="isInfoDialogOpen" />
     <div class="grid grid-cols-4 xl:grid-cols-8 w-full h-full">
       <div class="col-span-2 hidden xl:block"></div>
       <div class="col-span-4 xl:col-span-6 text-white flex flex-col">
@@ -150,6 +158,10 @@
 
 <script setup lang="ts">
 import { inject, ref } from 'vue'
+import RoboBanner from '@/components/elements/RoboBanner.vue'
+import InfoDialog from '@/components/elements/InfoDialog.vue'
+
+const isInfoDialogOpen = ref(false)
 
 const rules = [
   {
