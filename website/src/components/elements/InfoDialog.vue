@@ -13,7 +13,7 @@
           @click="close"
         ></div>
         <div
-          class="info-dialog-box relative w-full max-w-[38rem] max-h-[90vh] flex flex-col bg-[#7EDAFF] text-black p-5 pr-5"
+          class="info-dialog-box relative w-full max-w-[40rem] max-h-[90vh] flex flex-col bg-[#7EDAFF] text-black p-5 pr-5"
           @click.stop
         >
           <div class="group absolute top-[-0.7rem] sm:top-[-0.8rem] left-[-0.3rem] sm:left-[-0.3rem] scale-75 sm:scale-100 origin-top-left">
@@ -31,29 +31,29 @@
           <div class="info-dialog-content flex-1 min-h-0 overflow-y-auto leading-[1.4rem] text-[1.4rem] sm:leading-[1.5rem] sm:text-[1.5rem] mt-16 sm:mt-20 pr-0 pb-10">
             <slot>
               <p>
-                This CTF is intended to be solved by humans, not by fully automated agentic AI systems.<br><br>
+                We fully understand that AI is the future in cybersecurity, and we embrace it. That being said, our CTF is about learning, experimenting, and testing your limits.<br/><br/>
 
-                Even though LLMs have an important place in the future of software and security work. We built this for students who want to learn cybersecurity. Not for LLMs to flex on a leaderboard.<br><br></br>
+                So for this CTF, we won't be using LLMs to solve challenges. <br/>
+                Just raw biological neural networks. <br/><br/>
               </p>
               <p class="w-100% overflow-hidden text-nowrap">
                 ------------------------------------------------------------------------------------------------------------------------------------------
               </p>
               <p>
-                There's a difference between:<br>
-                [O] Using AI like a fast Google <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;totally fine, look up docs and concepts<br>
+                The distinction is simple:<br/><br/>
+                [O] Using AI like a fast Google <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;Totally fine, look up docs and concepts<br/><br/>
                 [X] Letting AI solve the challenge for you <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;that's just your wallet competing, not you<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;That's just your wallet competing, not you<br><br>
               </p>
               <p class="w-100% overflow-hidden text-nowrap">
                 ------------------------------------------------------------------------------------------------------------------------------------------
               </p>
               <p>
-                If the AI does the thinking, experimenting, and solving, you're not learning to hack. You're learning to prompt. Those are very different sports.<br><br></br>
+                If the AI does the thinking, experimenting, and solving, you're not learning to hack. You're learning to prompt. We can do that another time.<br/><br/>
 
-                Use AI to be productive. <br>
-                But use this CTF to learn. <br>
-                Solve the challenges yourself!<br><br>
+                Use AI to be productive. <br/>
+                In this CTF, lets test your own neural network. <br/><br/>
 
                 Register Now ;)<br>
               </p>

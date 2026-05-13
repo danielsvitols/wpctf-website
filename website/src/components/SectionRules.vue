@@ -233,6 +233,13 @@ const rules = [
     size: '79 B',
     description:
       'At the end of the event, all points will be totaled. The team with the highest score will be declared the winner.'
+  },
+  {
+    id: 11,
+    title: 'LLMs not allowed - Use your biological neural network instead of AI.',
+    size: '86 B',
+    description:
+      'LLMs are not allowed to be used during the competition. Particularly for solving challenges. Searching for information on the internet is allowed, but using LLMs to generate solutions is not.'
   }
 ]
 
