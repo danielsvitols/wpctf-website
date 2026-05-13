@@ -154,7 +154,7 @@ import { inject, ref } from 'vue'
 const rules = [
   {
     id: 0,
-    title: 'Compete - Teams will tackle a series of security-related.',
+    title: 'Compete - Teams will tackle a series of security-related challenges.',
     size: '144 B',
     description:
       'Each team works independently to solve a variety of cybersecurity challenges. A maximum of five people per team is allowed.'
