@@ -108,7 +108,7 @@
                   <br />
                   <br />
                   <br />
-                  <span class="max-w-[46ch] block">
+                  <span class="max-w-[52ch] block">
                     {{ rules[currentRuleIndex]?.description }}
                   </span>
                 </div>
@@ -249,7 +249,7 @@ const rules = [
     title: 'Agentic AI Is Not Permitted – Solve the Challenges Yourself',
     size: '86 B',
     description:
-      'LLM use is limited during the competition. You may search for information online and use autocomplete features, but you may not use LLMs to generate solutions.'
+      'This CTF is designed for humans who want to learn cybersecurity by doing. We reward technical understanding, creativity, persistence, and real hacking skill – not the ability to outsource work to an automated system. We believe AI is the future of productivity and security work, and we encourage its use in professional contexts. But this competition exists to build skills, not to test who has access to the best model. Using an LLM as a faster search tool is acceptable. Letting an agentic AI reason, experiment, and solve challenges for you is not – it undermines the learning this CTF exists to promote. Solve it yourself.'
   }
 ]
 
