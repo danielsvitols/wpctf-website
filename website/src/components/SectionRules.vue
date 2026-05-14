@@ -95,12 +95,10 @@
               <div class="col-span-2 left-start hidden xl:block">
                 <br />
                 Description
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 Presented by
                 <br />
                 Würth IT Italy
-                <br />
-                <br />
                 <br />
               </div>
               <div class="col-span-6 grid-cols-12 hidden xl:grid">
@@ -248,10 +246,10 @@ const rules = [
   },
   {
     id: 11,
-    title: 'LLMs not allowed - Use your biological neural network instead of AI.',
+    title: 'Agentic AI Is Not Permitted – Solve the Challenges Yourself',
     size: '86 B',
     description:
-      'LLMs are not allowed to be used during the competition. Particularly for solving challenges. Searching for information on the internet is allowed, but using LLMs to generate solutions is not.'
+      'LLM use is limited during the competition. You may search for information online and use autocomplete features, but you may not use LLMs to generate solutions.'
   }
 ]
 

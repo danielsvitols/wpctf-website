@@ -3,10 +3,13 @@
     <Transition name="info-dialog">
       <div
         v-if="modelValue"
-        class="info-dialog-root fixed inset-0 flex items-center justify-center px-5"
+        ref="rootRef"
+        class="info-dialog-root fixed inset-0 flex items-center justify-center px-5 outline-none"
         role="dialog"
         aria-modal="true"
+        tabindex="-1"
         @click.self="close"
+        @keydown.esc="close"
       >
         <div
           class="info-dialog-overlay absolute inset-0 bg-black/50"
@@ -73,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, watch } from 'vue'
+import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 const props = defineProps<{
   modelValue: boolean
@@ -83,36 +86,56 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
 }>()
 
+const rootRef = ref<HTMLDivElement | null>(null)
+
 function close() {
   emit('update:modelValue', false)
 }
 
-function onKeyDown(e: KeyboardEvent) {
-  if (e.key === 'Escape' && props.modelValue) {
-    close()
-  }
+let lockedScrollY = 0
+let isLocked = false
+
+function lockScroll() {
+  if (typeof document === 'undefined' || isLocked) return
+  lockedScrollY = window.scrollY || window.pageYOffset || 0
+  const body = document.body
+  body.style.position = 'fixed'
+  body.style.top = `-${lockedScrollY}px`
+  body.style.left = '0'
+  body.style.right = '0'
+  body.style.width = '100%'
+  isLocked = true
+}
+
+function unlockScroll() {
+  if (typeof document === 'undefined' || !isLocked) return
+  const body = document.body
+  body.style.position = ''
+  body.style.top = ''
+  body.style.left = ''
+  body.style.right = ''
+  body.style.width = ''
+  window.scrollTo(0, lockedScrollY)
+  isLocked = false
 }
 
 watch(
   () => props.modelValue,
-  (open) => {
+  async (open) => {
     if (typeof document === 'undefined') return
     if (open) {
-      document.body.classList.add('overflow-hidden')
-      document.addEventListener('keydown', onKeyDown)
+      lockScroll()
+      await nextTick()
+      rootRef.value?.focus()
     } else {
-      document.body.classList.remove('overflow-hidden')
-      document.removeEventListener('keydown', onKeyDown)
+      unlockScroll()
     }
   },
   { immediate: true }
 )
 
 onBeforeUnmount(() => {
-  if (typeof document !== 'undefined') {
-    document.removeEventListener('keydown', onKeyDown)
-    document.body.classList.remove('overflow-hidden')
-  }
+  unlockScroll()
 })
 </script>
 
