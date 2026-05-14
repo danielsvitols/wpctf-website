@@ -28,34 +28,40 @@
           >
            <img src="/images/banners/robo-close.svg" alt="Close" class="w-16 h-16">
           </button>
-          <div class="info-dialog-content flex-1 min-h-0 overflow-y-auto leading-[1.4rem] text-[1.4rem] sm:leading-[1.5rem] sm:text-[1.5rem] mt-16 sm:mt-20 pr-0 pb-10">
+          <div class="info-dialog-content flex-1 min-h-0 overflow-y-auto leading-[1.2rem] text-[1.2rem] sm:leading-[1.5rem] sm:text-[1.5rem] mt-16 sm:mt-20 pr-0 pb-10">
             <slot>
               <p>
                 We fully understand that AI is the future in cybersecurity, and we embrace it. That being said, our CTF is about learning, experimenting, and testing your limits.<br/><br/>
 
-                So for this CTF, we won't be using LLMs to solve challenges. <br/>
-                Just raw biological neural networks. <br/><br/>
+                For the challenges you will need to rely on <br/>
+                raw biological neural networks.<br/>
+                LLM usage will be limited.<br/><br/>
+
+                The distinction is simple:
               </p>
               <p class="w-100% overflow-hidden text-nowrap">
                 ------------------------------------------------------------------------------------------------------------------------------------------
               </p>
               <p>
-                The distinction is simple:<br/><br/>
-                [O] Using AI like a fast Google <br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;Totally fine, look up docs and concepts<br/><br/>
-                [X] Letting AI solve the challenge for you <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;That's just your wallet competing, not you<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                YES &nbsp;| As a replacement for searching the web <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                YES &nbsp;| As an auto complete on steroids in your IDE  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                NO &nbsp;&nbsp;| Letting AI solve the challenge for you <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
               </p>
               <p class="w-100% overflow-hidden text-nowrap">
                 ------------------------------------------------------------------------------------------------------------------------------------------
               </p>
               <p>
+                <br/>
                 If the AI does the thinking, experimenting, and solving, you're not learning to hack. You're learning to prompt. We can do that another time.<br/><br/>
 
                 Use AI to be productive. <br/>
-                In this CTF, lets test your own neural network. <br/><br/>
+                In this CTF, let's test your own neural network. <br/><br/>
 
-                Register Now ;)<br>
+                Register Now, if you can ;)<br>
               </p>
             </slot>
           </div>
