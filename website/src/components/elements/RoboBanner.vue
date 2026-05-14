@@ -18,6 +18,12 @@
       draggable="false"
     />
     <img
+      src="/images/robot-face/robot-face3.svg"
+      alt=""
+      class="absolute top-[9px] left-[7px] select-none pointer-events-none group-hover:opacity-0"
+      draggable="false"
+    />
+    <img
       src="/images/banners/robo-angry.svg"
       alt=""
       class="absolute inset-0 w-full h-full select-none pointer-events-none opacity-0 group-hover:opacity-100"

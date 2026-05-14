@@ -21,6 +21,7 @@
         >
           <div class="group absolute top-[-0.7rem] sm:top-[-0.8rem] left-[-0.3rem] sm:left-[-0.3rem] scale-75 sm:scale-100 origin-top-left">
             <img src="/images/banners/robo-calm-dialog.svg" class="block group-hover:hidden"></img>
+            <img src="/images/robot-face/robot-face3.svg" class="absolute top-[9px] left-[7px] block group-hover:hidden"></img>
             <img src="/images/banners/robo-angry-dialog.svg" class="hidden group-hover:block"></img>
           </div>
           <button
