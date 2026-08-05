@@ -1,4 +1,4 @@
-FROM node:25.9.0@sha256:78839ac448c23517f8eab2e8f7943d9b4f73979eb7f8bed2c73dbf72ff869e7b AS build_image
+FROM node:26.6.0@sha256:3e9ed202a2401a08687cb02367f7454a51c2a9e757d8e45728ec97a3c6241158 AS build_image
 
 WORKDIR /app/website
 
@@ -13,7 +13,7 @@ COPY website/ .
 # build app for production with minification
 RUN npm run build
 
-FROM nginxinc/nginx-unprivileged:1.27-alpine@sha256:65e3e85dbaed8ba248841d9d58a899b6197106c23cb0ff1a132b7bfe0547e4c0
+FROM nginxinc/nginx-unprivileged:1.31-alpine@sha256:a6c3ec0c0d249d68b0682df854d4a9e222b90fb607dc3fcf2f1d2fcbc85d347e
 
 COPY --from=build_image /app/website/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
