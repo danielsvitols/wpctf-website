@@ -43,6 +43,31 @@ test.describe('Home Page', () => {
     const registrationHeading = page.locator('#registration h2')
     await expect(registrationHeading).toHaveText('Registration')
   })
+
+  test('should contain mobile overflow while keeping the rules artwork scrollable', async ({
+    page
+  }) => {
+    await page.setViewportSize({ width: 375, height: 667 })
+    await page.goto('/')
+
+    const layout = await page.evaluate(() => {
+      const artwork = document.querySelector<HTMLElement>('#rules pre')
+      if (!artwork) return null
+
+      return {
+        documentClientWidth: document.documentElement.clientWidth,
+        documentScrollWidth: document.documentElement.scrollWidth,
+        artworkClientWidth: artwork.clientWidth,
+        artworkScrollWidth: artwork.scrollWidth,
+        artworkOverflowX: getComputedStyle(artwork).overflowX
+      }
+    })
+
+    expect(layout).not.toBeNull()
+    expect(layout?.documentScrollWidth).toBe(layout?.documentClientWidth)
+    expect(layout?.artworkScrollWidth).toBeGreaterThan(layout?.artworkClientWidth ?? 0)
+    expect(layout?.artworkOverflowX).toBe('auto')
+  })
 })
 
 test.describe('Sponsors Page', () => {
@@ -51,6 +76,26 @@ test.describe('Sponsors Page', () => {
     const sponsorsHeading = page.locator('#sponsors-section h1')
     await expect(sponsorsHeading).toBeVisible()
     await expect(sponsorsHeading).toHaveText('Sponsors')
+  })
+
+  test('should allow vertical wheel scrolling while the cookie banner is visible', async ({
+    page
+  }) => {
+    await page.goto('/sponsors')
+    await expect(page.locator('#cookie-container')).toBeVisible()
+
+    const layout = await page.evaluate(() => ({
+      documentHeight: document.documentElement.scrollHeight,
+      viewportHeight: window.innerHeight,
+      bodyOverflowY: getComputedStyle(document.body).overflowY
+    }))
+
+    expect(layout.documentHeight).toBeGreaterThan(layout.viewportHeight)
+    expect(layout.bodyOverflowY).not.toBe('hidden')
+
+    await page.mouse.wheel(0, 600)
+
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
   })
 })
 
